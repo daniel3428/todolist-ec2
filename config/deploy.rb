@@ -1,16 +1,16 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, 'urlshortner'
+set :application, 'todolist'
 set :repo_url, 'https://github.com/daniel3428/todolist-ec2.git' # Edit this to match your repository
-set :branch, :master
-set :deploy_to, '/home/deploy/urlshortner'
+set :branch, :main
+set :deploy_to, '/home/deploy/todolist-ec2'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :keep_releases, 5
 set :rvm_type, :user
-set :rvm_ruby_version, 'ruby-2.2.3' # Edit this if you are using MRI Ruby
+set :rvm_ruby_version, 'ruby-3.0.3' # Edit this if you are using MRI Ruby
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
