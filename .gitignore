@@ -28,4 +28,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-config/database.yml
+/config/database.yml
+
+/app/controllers/users_controller.rb
