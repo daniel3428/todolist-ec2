@@ -29,5 +29,3 @@
 /config/master.key
 
 /config/database.yml
-
-/app/controllers/users_controller.rb
