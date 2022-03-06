@@ -3,15 +3,16 @@ class TodosController < ApplicationController
     before_action :set_todo, only: [:show, :update, :destroy]
 
     def index
-        @todos = Todo.all
+        @todos = User.find(params[:user_id]).todos
         render json: @todos
     end
 
     def show
         render json: @todo
     end
+
     def create
-        @todo = Todo.new(todo_params)
+        @todo = User.find(todo_params[:user_id]).todos.build(todo_params)
         if @todo.save
             render json: @todo
         else
@@ -31,6 +32,7 @@ class TodosController < ApplicationController
         @todo.destroy
     end
 
+    
     private
         def set_todo
             @todo = Todo.find(params[:id])
